@@ -1,3 +1,5 @@
+from Lenght import len
+
 # МНОЖЕСТВА
 # Задача 1
 print("Задача 1")

@@ -1,3 +1,5 @@
+from Lenght import len
+
 # КОРТЕЖИ
 # Задача 1
 symbs = (s for s in input("Введите строку: "))

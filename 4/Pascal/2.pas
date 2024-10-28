@@ -1,5 +1,7 @@
 ﻿program f2;
 
+uses lenght;
+
 var
   word: string;
   index, m, n: Integer;
@@ -42,7 +44,7 @@ begin
   WriteLn('Задача 6');
   Write('Введите слово: ');
   ReadLn(word);
-  WriteLn(Copy(word, 1, Length(word) div 2));
+  WriteLn(Copy(word, 1, len(word) div 2));
 
   // Задача 7
   WriteLn('Задача 7');
@@ -52,6 +54,6 @@ begin
   ReadLn(m);
   Write('Конец: ');
   ReadLn(n);
-  WriteLn(Copy(word, m, n + 1));
+  WriteLn(Copy(word, m, n));
 end.
 

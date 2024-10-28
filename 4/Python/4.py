@@ -1,3 +1,5 @@
+from Lenght import len
+
 # Задача 1
 print("Задача 1")
 sentence = input("Введите предложение: ")
@@ -13,8 +15,23 @@ else:
 
 # Задача 2
 print("\nЗадача 2")
-sentence = input("Введите предложение: ").split(",")
-print(sentence[1])
+sentence = input("Введите предложение: ")
+
+output = ''
+i = 0
+flag = True
+comma_counter = 0
+
+while (i < len(sentence)) and flag:
+    if sentence[i + 1] == ',':
+        comma_counter += 1
+
+    if (comma_counter == 1) and (sentence[i + 1] != ','):
+        output += sentence[i + 1]
+    elif comma_counter == 2:
+        flag = False
+
+    i += 1
 
 # Задача 3
 print("\nЗадача 3")

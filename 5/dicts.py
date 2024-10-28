@@ -1,3 +1,5 @@
+from Lenght import len
+
 # СЛОВАРИ
 # Задача 1
 print("Задача 1")

@@ -1,4 +1,5 @@
 import math
+from Lenght import len
 
 # СПИСКИ
 arr1 = [2, 3, 8, 6, 1]

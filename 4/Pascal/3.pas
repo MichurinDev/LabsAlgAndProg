@@ -1,7 +1,9 @@
 ﻿program f3;
 
+uses Lenght;
+
 var
-  s, new_s, word, sentence, s1, s2: string;
+  s, new_s, word, sentence, s1, s2, temp_str: string;
   i, counter: Integer;
 
 begin
@@ -34,31 +36,71 @@ begin
 
   // Задача 4
   WriteLn;
-  WriteLn('Задача 4');
-  Write('Введите предложение: ');
-  ReadLn(sentence);
-  Write('Введите первый символ: ');
-  ReadLn(s1);
-  Write('Введите второй символ: ');
-  ReadLn(s2);
+  writeln('Задача 4');
+  write('Введите предложение: ');
+  readln(sentence);
+  
+  write('Введите первый символ: ');
+  readln(s1);
+  
+  write('Введите второй символ: ');
+  readln(s2);
+  
+  writeln('Вхождения символа ', s1);
+  temp_str := '';
+  
+  for i := 1 to len(sentence) do
+  begin
+    if sentence[i] = ' ' then
+    begin
+      if Pos(s1, temp_str) > 0 then
+        writeln(temp_str);
+      temp_str := '';
+    end
+    else
+      temp_str := temp_str + sentence[i];
+  end;
+  
+  // Проверка последнего слова
+  if Pos(s1, temp_str) > 0 then
+    writeln(temp_str);
 
-  WriteLn('Вхождения символа ', s1);
-  for word in sentence.Split([' ']) do
-    if Pos(s1, word) > 0 then
-      WriteLn(word);
+  writeln;
+  writeln('Вхождения символа ', s2);
+  
+  temp_str := '';
+  
+  for i := 1 to length(sentence) do
+  begin
+    if sentence[i] = ' ' then
+    begin
+      if Pos(s2, temp_str) > 0 then
+        writeln(temp_str);
+      temp_str := '';
+    end
+    else
+      temp_str := temp_str + sentence[i];
+  end;
 
-  WriteLn;
-  WriteLn('Вхождения символа ', s2);
-  for word in sentence.Split([' ']) do
-    if Pos(s2, word) > 0 then
-      WriteLn(word);
+  // Проверка последнего слова
+  if Pos(s2, temp_str) > 0 then
+    writeln(temp_str);
 
   // Задача 5
   WriteLn;
   WriteLn('Задача 5');
-  Write('Введите предложение: ');
+  WriteLn('Введите предложение: ');
   ReadLn(sentence);
-  WriteLn(Length(sentence) - Length(StringReplace(sentence, ' ', '', [rfReplaceAll])));
+  
+  counter := 0;
+
+  for i := 1 to len(sentence) do
+  begin
+    if sentence[i] = ' ' then
+      counter := counter + 1;
+  end;
+
+  WriteLn('Количество пробелов: ', counter);
 
   // Задача 6
   WriteLn;

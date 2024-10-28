@@ -1,3 +1,5 @@
+from Lenght import len
+
 # Задача 1
 print("Задача 1")
 word = input("Введите слово: ")

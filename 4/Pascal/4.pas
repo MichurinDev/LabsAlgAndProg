@@ -1,5 +1,7 @@
 ﻿program f4;
 
+uses Lenght;
+
 var
   sentence, output: string;
   i, comma_counter: Integer;
@@ -12,7 +14,7 @@ begin
   ReadLn(sentence);
   found := False;
 
-  for i := 1 to Length(sentence) - 1 do
+  for i := 1 to len(sentence) - 1 do
   begin
     if sentence[i] = sentence[i + 1] then
     begin
@@ -36,7 +38,7 @@ begin
   flag := true;
   comma_counter := 0;
   
-  while (i < Length(sentence)) and flag do
+  while (i < len(sentence)) and flag do
   begin
     if sentence[i + 1] = ',' then
       comma_counter += 1;

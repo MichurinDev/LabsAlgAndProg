@@ -1,3 +1,5 @@
+from Lenght import len
+
 # Задача 1
 print("Задача 1")
 s = input("Введите слово: ")
@@ -22,24 +24,37 @@ for i in range(2, len(word), 3):
 
 # Задача 4
 print("\nЗадача 4")
-sentence = input("Введите предложение: ").split()
+sentence = input("Введите предложение: ")
 s1 = input("Введите первый символ: ")
 s2 = input("Введите второй символ: ")
+temp_str = ""
 
 print(f"Вхождения символа {s1}")
-for word in sentence:
-    if s1 in word:
-        print(word)
+for s in sentence:
+    if s == " ":
+        if s1 in temp_str:
+            print(temp_str)
+        temp_str = ""
+    else:
+        temp_str += s
 
-print(f"\nВхождения символа {s1}")
-for word in sentence:
-    if s2 in word:
-        print(word)
+print(f"\nВхождения символа {s2}")
+for s in sentence:
+    if s == " ":
+        if s2 in temp_str:
+            print(temp_str)
+        temp_str = ""
+    else:
+        temp_str += s
 
 # Задача 5
 print("\nЗадача 5")
 sentence = input("Введите предложение: ")
-print(sentence.count(" "))
+counter = 0
+for s in sentence:
+    if s == " ":
+        counter += 1
+print(counter)
 
 # Задача 6
 print("\nЗадача 6")
