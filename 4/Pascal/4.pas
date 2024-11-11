@@ -12,20 +12,21 @@ begin
   WriteLn('Задача 1');
   Write('Введите предложение: ');
   ReadLn(sentence);
-  found := False;
+
+  output := '';
 
   for i := 1 to len(sentence) - 1 do
   begin
-    if sentence[i] = sentence[i + 1] then
+    if (sentence[i] = sentence[i + 1]) and (output = '') then
     begin
-      WriteLn(i, ' ', i + 1);
-      found := True;
-      Break;
+      output := i + ' ' + (i + 1);
     end;
   end;
 
-  if not found then
-    WriteLn('Предложение не содержит повторяющихся символов');
+  if output = '' then
+    WriteLn('Предложение не содержит повторяющихся символов')
+  else
+    writeln(output);
 
   // Задача 2
   WriteLn;
@@ -35,19 +36,16 @@ begin
   
   output := '';
   i := 0;
-  flag := true;
   comma_counter := 0;
   
-  while (i < len(sentence)) and flag do
+  while (i < len(sentence)) and (comma_counter <> 2) do
   begin
     if sentence[i + 1] = ',' then
       comma_counter += 1;
   
     if (comma_counter = 1) and (sentence[i + 1] <> ',') then
-      output += sentence[i + 1]
-    else if comma_counter = 2 then
-      flag := false;
-  
+      output += sentence[i + 1];
+    
     i += 1;
   end;
   
@@ -58,18 +56,20 @@ begin
   WriteLn('Задача 3');
   Write('Введите предложение: ');
   ReadLn(sentence);
+
   sentence := LowerCase(sentence);
   found := False;
+  output := '';
   i := 1;
 
   while (i <= Length(sentence)) and not found do
   begin
-    if (sentence[i] = 'с') or (sentence[i] = 'т') then
+    if ((sentence[i] = 'с') or (sentence[i] = 'т')) and (output = '') then
     begin
-      WriteLn(sentence[i], ' встретилось раньше');
-      found := True;
+      output := sentence[i] + ' встретилось раньше';
     end
     else
       i += 1;
   end;
+  writeln(output);
 end.
