@@ -1,5 +1,5 @@
 import math
-from Lenght import len
+from utils import *
 
 # СПИСКИ
 arr1 = [2, 3, 8, 6, 1]
@@ -15,7 +15,7 @@ print(arr1.index(arr1[0] + arr1[-1]))
 
 # Задача 3
 print("\nЗадача 3")
-print(arr1[len(arr1) // 2] == arr1[0] * arr1[-1])
+print(arr1[lenght(arr1) // 2] == arr1[0] * arr1[-1])
 
 # Задача 4
 print("\nЗадача 4")
@@ -23,11 +23,11 @@ mult = 1
 for i in arr1:
     mult *= i
 
-print(math.factorial(len(arr1)) == mult)
+print(math.factorial(lenght(arr1)) == mult)
 
 # Задача 5
 print("\nЗадача 5")
-print(all(len(str(i)) == 3 for i in arr1))
+print(all(lenght(str(i)) == 3 for i in arr1))
 
 # Задача 6
 print("\nЗадача 6")

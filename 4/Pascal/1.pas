@@ -4,9 +4,7 @@ var
   country, city, surname1, surname2, city1, city2, city3, s1, s2: string;
   counter: Integer;
 
-begin
-  for var i: char in 'hello' do
-    
+begin    
   // Задача 1
   WriteLn('Задача 1');
   Write('Введите страну: ');

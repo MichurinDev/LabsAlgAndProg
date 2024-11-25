@@ -1,4 +1,4 @@
-from Lenght import len
+from utils import *
 
 # СЛОВАРИ
 # Задача 1
@@ -54,15 +54,15 @@ best_runners = []
 best_jumpers = []
 scores = {name: 0 for name in results}
 
-best_run_result = sorted([(name, results[name]["run"]) for name in results if name not in noncomplite_normatives_name], key=lambda x: x[1])[:3]
+best_run_result = sort_tuples([(name, results[name]["run"]) for name in results if name not in noncomplite_normatives_name], 2)[::-1][:3]
 for name, _ in best_run_result:
     scores[name] += 1
 
-best_jump_result = sorted([(name, results[name]["jump"]) for name in results if name not in noncomplite_normatives_name], key=lambda x: x[1], reverse=True)[:3]
+best_jump_result = sort_tuples([(name, results[name]["jump"]) for name in results if name not in noncomplite_normatives_name], 2)[::-1][:3]
 for name, _ in best_run_result:
     scores[name] += 1
 
-best_results = sorted(scores.items(), key=lambda x: x[1], reverse=True)[:3]
+best_results = sort_tuples(scores.items(), 2)[::-1][:3]
 
 print(f"Не выполнили нормативы: {', '.join(noncomplite_normatives_name)}")
 print(f"Норамативы выполнили (человек): {complite_normatives_counter}")

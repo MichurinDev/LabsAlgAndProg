@@ -1,4 +1,5 @@
-from Lenght import len
+from utils import *
+
 
 # МНОЖЕСТВА
 # Задача 1
@@ -37,11 +38,11 @@ for word in text.split():
             print(f"{s.lower()}: {word}")
 
 for s in text:
-    if text.count(s) >= 2:
+    if count(text, s) >= 2:
         output_b.add(s)
 
 for s in text:
-    if text.count(s) == 1:
+    if count(text, s) == 1:
         output_c.add(s)
 
 print(f"б) {output_b}")
