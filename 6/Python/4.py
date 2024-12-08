@@ -3,9 +3,9 @@
 # для нахождения максимального значения.
 
 def lenght(l: list) -> int:
-    cunt = 0
-    for _ in l: cunt += 1
-    return cunt
+    count = 0
+    for _ in l: count += 1
+    return count
 
 
 def f(l: list) -> int:
