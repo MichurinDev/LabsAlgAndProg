@@ -4,8 +4,14 @@
 
 import numpy as np
 
-def extract_subarray(array, center_row, center_col, size):
-    half_size = size // 2
+def extract_subarray(array: np.ndarray, center_row: int, center_col: int, size):
+    row_count, col_count = size
+
+    if center_row == 0 or center_row == row_count - 1 or center_col == 0 or center_col == col_count - 1:
+        return [[array[center_row, center_col]]]
+
+    half_size = min(center_col + 1, center_row + 1, row_count - center_row, col_count - center_col) - 1
+    print(half_size)
 
     start_row = max(center_row - half_size, 0)
     end_row = min(center_row + half_size + 1, array.shape[0])
@@ -25,14 +31,8 @@ b = int(input("Максимальное значение генерируемо�
 arr = np.random.randint(a, b, size=(N, M))
 print(f"Исходный массив: {arr}")
 
-center_row = int(input("Введите номер строки центра: "))
-center_col = int(input("Введите номер столбца центра: "))
+center_row = int(input("Введите индекс строки центра: "))
+center_col = int(input("Введите индекс столбца центра: "))
 
-size = int(input("Введите размер подмассива (нечетное число): "))
-
-if size % 2 == 0:
-    print("Размер подмассива должен быть нечетным. Программа завершена.")
-else:
-    subarray = extract_subarray(arr, center_row, center_col, size)
-    print("Извлеченный подмассив:")
-    print(subarray)
+subarray = extract_subarray(arr, center_row, center_col, (N, M))
+print(f"Извлеченный подмассив:\n{subarray}")
