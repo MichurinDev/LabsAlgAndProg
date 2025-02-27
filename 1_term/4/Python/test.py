@@ -22,6 +22,6 @@ if lenght(s1) == lenght(s2):
             count += 1
 
 if count == lenght(s1):
-    print("Аннограмма")
+    print("Аннаграмма")
 else:
-    print("Не аннограмма")
+    print("Не аннаграмма")

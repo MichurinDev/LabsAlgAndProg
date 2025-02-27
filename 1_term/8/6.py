@@ -59,7 +59,7 @@ a = int(input("Минимально значение генерируемого 
 b = int(input("Максимальное значение генерируемого числа (не учитывается): "))
 
 arr = np.random.randint(a, b, size=(N, M))
-print(f"Исходный массив: {arr}")
+print(f"Исходный массив:\n{arr}")
 
 sorted_arr = sort_for_freq(arr)
 print(sorted_arr)
