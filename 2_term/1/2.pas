@@ -9,6 +9,7 @@ var
 procedure GenerateCombinations(start: integer; depth: integer);
 var
   i: integer;
+
 begin
   if depth <> k then begin
     for i := start to n do begin
@@ -18,9 +19,7 @@ begin
   end
   else begin
     for i := 0 to k - 1 do begin
-      write(combination[i]);
-      if i < k - 1 then
-        write(' ');
+      write(combination[i] + ' ');
     end;
     writeln();
   end;

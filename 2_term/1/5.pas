@@ -43,6 +43,6 @@ begin
 
   SetLength(subset, n);
   
-  Writeln('Найденные подмножества с суммой ', target, ':');
+  Writeln('Найденные подмножества с суммой ' + target + ':');
   FindSubsets(0, 0, subset, 0);
 end.
