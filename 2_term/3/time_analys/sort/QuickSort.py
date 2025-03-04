@@ -1,9 +1,16 @@
-def quick_sort(arr):
+def quick_sort(arr, count_permutations, count_comparisons):
     if len(arr) <= 1:
-        return arr
+        return arr, count_permutations, count_comparisons
 
     pivot = arr[0]
-    left = [x for x in arr[1:] if x <= pivot]
-    right = [x for x in arr[1:] if x > pivot]
+    left = []
+    right = []
+    for x in arr[1:]:
+        if x <= pivot:
+            left.append(x)
+        else:
+            right.append(x)
+        count_permutations += 1
+        count_comparisons += 1
 
-    return quick_sort(left) + [pivot] + quick_sort(right)
+    return quick_sort(left, count_permutations, count_comparisons)[0] + [pivot] + quick_sort(right, count_permutations, count_comparisons)[0], count_permutations, count_comparisons

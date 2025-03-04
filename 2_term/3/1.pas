@@ -32,35 +32,32 @@ begin
   Result := arr;
 end;
 
-function QuickSort(arr: array of integer; left, right: integer): array of integer;
-var
-    i, j, pivot: integer;
-    temp: integer;
+function QuickSort(arr: Array of integer; left, right: integer): array of integer;
+var i, j, pivot, temp: integer;
 begin
-    if left >= right then Result := arr;
+  if left >= right then Result := arr;
 
-    i := left;
-    j := right;
-    pivot := arr[(left + right) div 2];
+  i := left;
+  j := right;
+  pivot := arr[(left + right) div 2];
 
-    repeat
-        while arr[i] < pivot do i += 1;
-        while arr[j] > pivot do j -= 1;
+  repeat
+    while arr[i] < pivot do i += 1;
+    while arr[j] > pivot do j -= 1;
 
-        if i <= j then
-        begin
-            temp := arr[i];
-            arr[i] := arr[j];
-            arr[j] := temp;
-            i += 1;
-            j -= 1;
-        end;
-    until i > j;
+    if i <= j then begin
+      temp := arr[i];
+      arr[i] := arr[j];
+      arr[j] := temp;
+      i += 1;
+      j -= 1;
+    end;
+  until i > j;
 
-    if left < j then QuickSort(arr, left, j);
-    if i < right then QuickSort(arr, i, right);
+  if left < j then QuickSort(arr, left, j);
+  if i < right then QuickSort(arr, i, right);
 
-    Result := arr;
+  Result := arr;
 end;
 
 function SelectionSort(arr: array of integer): array of integer;
